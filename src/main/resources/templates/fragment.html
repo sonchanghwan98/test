@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <th:block th:fragment="header">
+   <h1>menu</h1>
+   <ul>
+    <th:block  th:if="${session.user == null }">
+	    <li><a th:href="@{/account/SignUp}">SignUp</a></li>
+	    <li><a th:href="@{/account/Login}">Login</a></li>
+    </th:block>
+		 <th:block th:if="${session.user != null }">
+		   <li><a th:href="@{/account/Logout}">Logout</a></li>
+		   <li><a th:href="@{/account/MyPage}" th:text="${session.user.nick}"></a></li>
+	  </th:block>
+	</ul>
+	<hr>
+	
+   </th:block>
+</body>
+</html>

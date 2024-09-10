@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:replace="/fragment::header"></th:block>
+<fieldset>
+    <legend>로그인</legend>
+    
+    <table>
+      <tr>
+        <th>이름</th>
+        <td th:text="${session.user.name}"></td>
+      </tr>
+      <tr>
+        <th>닉네임</th>
+        <td th:text="${session.user.nick}"></td>
+      </tr>
+      <tr>
+        <th>아이디</th>
+        <td th:text="${session.user.userid}"></td>
+      </tr>
+      <tr>
+        <th>비밀번호</th>
+        <td th:text="${session.user.userpw}"></td>
+      </tr>
+      <tr>
+        <th>전화번호</th>
+        <td th:text="${session.user.phone}"></td>
+      </tr>
+      <tr>
+        <th>이메일</th>
+        <td th:text="${session.user.email}"></td>
+      </tr>
+      <tr>
+        <th>생년월일</th>
+        <td th:text="${session.user.brith}"></td>
+      </tr>
+    </table>
+</fieldset>
+</body>
+</html>
