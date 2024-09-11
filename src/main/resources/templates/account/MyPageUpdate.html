@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:replace="/fragment::header"></th:block>
+<fieldset>
+    <legend>마이페이지 정보 수정</legend>
+    <form method="post">
+    <table>
+      <tr>
+        <th>닉네임</th>
+        <td><input name="nick" type="text" placeholder="닉네임" required th:value="${session.user.nick}"></td>
+      </tr>
+      <tr>
+        <th>전화번호</th>
+        <td><input name="phone" type="text" placeholder="전화번호" required th:value="${session.user.phone}"></td>
+      </tr>
+      <tr>
+        <th>이메일</th>
+        <td><input name="email" type="text" placeholder="이메일" required th:value="${session.user.email}"></td>
+      </tr>
+    </table>
+    <input name="idx" type="hidden" th:value="${session.user.idx}">
+    <button>수정</button>
+    </form>
+</fieldset>
+</body>
+</html>

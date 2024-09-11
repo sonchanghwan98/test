@@ -22,4 +22,9 @@ public class AccountService {
 		return dao.selectOne(input);
 	}
 
+	public int updateUser(AccountVO input) {
+		return dao.updateUser(input);
+		
+	}
+
 }
