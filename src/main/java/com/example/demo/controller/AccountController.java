@@ -34,7 +34,7 @@ public class AccountController {
 	
 	@PostMapping("Login")
 	public String Login(AccountVO input,HttpSession session) {
-		
+
 		session.setAttribute("user", as.selectOne(input));
 		
 		return "redirect:/";
@@ -47,4 +47,14 @@ public class AccountController {
 	}
 	@GetMapping("MyPage")
 	public void MyPage() {}
+	
+	@GetMapping("MyPageUpdate")
+	public void MyPageUpdate() {}
+	
+	@PostMapping("MyPageUpdate")
+	public String MyPageUpdate(AccountVO input) {
+		as.updateUser(input);
+		
+		return "redirect:/account/Logout";
+	}
 }
